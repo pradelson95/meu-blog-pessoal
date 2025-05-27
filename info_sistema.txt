@@ -1,0 +1,42 @@
+sistema operativo: Windows
+
+versión: 10.0.26100
+
+arquitectura: 64bit
+
+nombre de usuario: WIN-369LDJ0EM2V
+
+procesador: ARMv8 (64-bit) Family 8 Model 805 Revision D0E, Qualcomm Technologies Inc
+
+nombre completo de la SO: Windows-10-10.0.26100-SP0
+
+dirección IP local: 192.168.100.84
+
+sistema operativo: Windows
+
+versión: 10.0.26100
+
+arquitectura: 64bit
+
+nombre de usuario: WIN-369LDJ0EM2V
+
+procesador: ARMv8 (64-bit) Family 8 Model 805 Revision D0E, Qualcomm Technologies Inc
+
+nombre completo de la SO: Windows-10-10.0.26100-SP0
+
+dirección IP local: 192.168.100.84
+
+sistema operativo: Windows
+
+versión: 10.0.26100
+
+arquitectura: 64bit
+
+nombre de usuario: WIN-369LDJ0EM2V
+
+procesador: ARMv8 (64-bit) Family 8 Model 805 Revision D0E, Qualcomm Technologies Inc
+
+nombre completo de la SO: Windows-10-10.0.26100-SP0
+
+dirección IP local: 192.168.100.84
+
