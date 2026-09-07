@@ -1,0 +1,310 @@
+/* ==========================================================================
+   CONFIGURACIÓN DE VARIABLES Y PALETA DE COLORES (LIGHT MODE)
+   ========================================================================== */
+:root {
+  /* Color de fondo principal de la página (gris-blanco muy suave para no cansar la vista) */
+  --bg-color: #f8fafc;
+  
+  /* Color de fondo de los contenedores/tarjetas (blanco puro para resaltar del fondo) */
+  --card-bg: #ffffff;
+  
+  /* Color de borde por defecto de las tarjetas (gris claro sutil) */
+  --card-border: #e2e8f0;
+  
+  /* Color de borde al pasar el cursor sobre una tarjeta (gris un poco más oscuro) */
+  --card-border-hover: #cbd5e1;
+  
+  /* Color de texto principal para títulos e información destacada (negro/azul oscuro) */
+  --text-main: #0f172a;
+  
+  /* Color de texto secundario para fechas, metas y textos de apoyo (gris medio) */
+  --text-muted: #64748b;
+  
+  /* Color de texto optimizado para párrafos largos y lecturas extensas (gris oscuro) */
+  --text-content: #334155;
+
+  /* Color primario de acento para botones, enlaces y elementos interactivos (azul elegante) */
+  --accent-primary: #2563eb;
+  
+  /* Color secundario de acento para etiquetas decorativas (púrpura) */
+  --accent-secondary: #7c3aed;
+  
+  /* Sombra suave e indirecta por defecto para dar profundidad a las tarjetas */
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  
+  /* Sombra más elevada para el efecto de elevación al pasar el cursor (hover) */
+  --shadow-hover: 0 12px 28px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* ==========================================================================
+   REINICIO BASE (RESET) Y ESTILOS GLOBALES
+   ========================================================================== */
+
+/* Reseteo universal: Asegura que el padding y border no alteren el tamaño total asignado a los elementos */
+* {
+  box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto total */
+  margin: 0;             /* Elimina los márgenes externos por defecto de todos los elementos */
+  padding: 0;            /* Elimina los rellenos internos por defecto de todos los elementos */
+}
+
+/* Estilos para el cuerpo completo del documento */
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif; /* Tipografía principal moderna con fallbacks de sistema */
+  background-color: var(--bg-color); /* Aplica el color de fondo definido en la variable */
+  color: var(--text-main);           /* Aplica el color de texto principal */
+  line-height: 1.7;                   /* Altura de línea para mejorar la legibilidad del texto */
+  padding: 3rem 1.25rem;             /* Relleno: 3rem arriba/abajo y 1.25rem a los lados */
+  min-height: 100vh;                 /* Fuerza a que el cuerpo ocupe como mínimo el 100% de la altura de la pantalla */
+  -webkit-font-smoothing: antialiased; /* Suaviza el renderizado de bordes de las fuentes en navegadores WebKit */
+}
+
+/* ==========================================================================
+   ESTRUCTURA CONTENEDORA Y VISTAS DE NAVEGACIÓN
+   ========================================================================== */
+
+/* Contenedor central delimitador de ancho */
+.container {
+  max-width: 720px;  /* Ancho máximo ideado para una lectura cómoda sin líneas demasiado largas */
+  margin: 0 auto;    /* Centra horizontalmente el contenedor en la pantalla */
+}
+
+/* Reglas base para las secciones/vistas que se alternan (Feed vs Artículo) */
+.view {
+  display: none;                         /* Oculta la vista de manera predeterminada */
+  opacity: 0;                            /* Inicia completamente transparente para la animación */
+  transform: translateY(10px);          /* Desplaza la vista 10px hacia abajo para la animación de entrada */
+  transition: opacity 0.25s ease, transform 0.25s ease; /* Define la velocidad y curva de transición de entrada */
+}
+
+/* Clase que activa y muestra la vista deseada */
+.view.active {
+  display: block;             /* Muestra la vista en el flujo del documento */
+  opacity: 1;                 /* Hace totalmente visible la vista */
+  transform: translateY(0);   /* Devuelve la vista a su posición original en el eje Y */
+}
+
+/* ==========================================================================
+   ENCABEZADO PRINCIPAL (HERO HEADER)
+   ========================================================================== */
+
+/* Estructura del bloque del encabezado principal */
+.hero-header {
+  margin-bottom: 3rem; /* Espaciado inferior para separarlo de la lista de posts */
+  text-align: left;    /* Alineación de texto a la izquierda */
+}
+
+/* Etiqueta pequeña sobre el título principal */
+.badge {
+  display: inline-block;          /* Mantiene comportamiento en línea pero permite paddings y márgenes */
+  padding: 0.35rem 0.85rem;       /* Espaciado interno de la etiqueta */
+  font-size: 0.75rem;             /* Tamañao de texto pequeño */
+  font-weight: 700;               /* Texto en negrita para jerarquía visual */
+  text-transform: uppercase;      /* Transforma el texto completamente a mayúsculas */
+  letter-spacing: 0.08em;         /* Añade espaciado entre letras */
+  color: #1d4ed8;                 /* Color del texto azul oscuro */
+  background: #eff6ff;            /* Fondo azul muy claro para contraste */
+  border: 1px solid #bfdbfe;      /* Borde fino azul claro */
+  border-radius: 20px;            /* Bordes redondeados tipo píldora */
+  margin-bottom: 1rem;            /* Margen inferior para separarlo del título */
+}
+
+/* Título principal del blog */
+.header-title {
+  font-size: 2.75rem;        /* Tamaño de fuente grande y destacado */
+  font-weight: 800;          /* Peso de fuente extra bold */
+  letter-spacing: -0.03em;   /* Junta ligeramente las letras para un acabado moderno */
+  color: var(--text-main);   /* Utiliza el tono oscuro principal */
+  line-height: 1.2;          /* Interlineado ajustado para títulos grandes */
+}
+
+/* Subtítulo o descripción corta debajo del título principal */
+.hero-header p {
+  color: var(--text-muted); /* Color gris medio para menor jerarquía visual */
+  font-size: 1.1rem;        /* Tamaño de texto ligeramente superior al estándar */
+  margin-top: 0.75rem;      /* Margen superior para separarlo del título */
+}
+
+/* ==========================================================================
+   FEED DE PUBLICACIONES Y TARJETAS (POST CARDS)
+   ========================================================================== */
+
+/* Contenedor flexible de la lista de entradas */
+.posts-feed {
+  display: flex;             /* Habilita el modelo Flexbox */
+  flex-direction: column;    /* Apila las tarjetas verticalmente */
+  gap: 1.5rem;               /* Espacio uniforme entre cada tarjeta */
+}
+
+/* Estilo individual de las tarjetas de publicaciones */
+.post-card {
+  background: var(--card-bg);                               /* Fondo blanco definido en variables */
+  border: 1px solid var(--card-border);                     /* Borde gris tenue */
+  border-radius: 16px;                                      /* Esquinas suavemente redondeadas */
+  padding: 1.75rem;                                         /* Espaciado interno general de la tarjeta */
+  cursor: pointer;                                          /* Cambia el puntero al icono de mano interactiva */
+  box-shadow: var(--shadow-card);                           /* Aplica la sombra base */
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);       /* Transición fluida y natural al interactuar */
+}
+
+/* Comportamiento visual de la tarjeta al pasar el cursor por encima (Hover) */
+.post-card:hover {
+  transform: translateY(-3px);       /* Eleva la tarjeta 3 píxeles */
+  border-color: var(--card-border-hover); /* Cambia el color del borde a un tono más oscuro */
+  box-shadow: var(--shadow-hover);   /* Aumenta la intensidad de la sombra */
+}
+
+/* Sección superior dentro de la tarjeta (Tags y Tiempo de lectura) */
+.card-header-info {
+  display: flex;                  /* Utiliza Flexbox */
+  justify-content: space-between; /* Alinea los elementos a los extremos opuestos */
+  align-items: center;            /* Centra verticalmente los elementos */
+  margin-bottom: 1rem;            /* Espacio inferior antes del título */
+}
+
+/* Clase base universal para las etiquetas (Tags) */
+.tag {
+  font-size: 0.75rem;      /* Tamaño de texto reducido */
+  font-weight: 600;        /* Peso semi-bold */
+  padding: 0.25rem 0.65rem;/* Espaciado interno */
+  border-radius: 6px;      /* Esquinas ligeramente redondeadas */
+}
+
+/* Variación temática de color azul para tags */
+.tag-blue {
+  background: #eff6ff; /* Fondo azul pastel claro */
+  color: #1d4ed8;      /* Texto azul intenso */
+}
+
+/* Variación temática de color púrpura para tags */
+.tag-purple {
+  background: #f5f3ff; /* Fondo púrpura pastel claro */
+  color: #6d28d9;      /* Texto púrpura intenso */
+}
+
+/* Indicador de tiempo estimado de lectura */
+.read-time {
+  font-size: 0.8rem;       /* Tamaño pequeño */
+  color: var(--text-muted);/* Color gris atenuado */
+  font-weight: 500;        /* Peso medio */
+}
+
+/* Título del post dentro de la tarjeta */
+.post-title {
+  font-size: 1.35rem;        /* Tamaño intermedio sobrio */
+  font-weight: 700;          /* Peso negrita */
+  color: var(--text-main);   /* Color oscuro principal */
+  line-height: 1.4;          /* Interlineado cómodo */
+  margin-bottom: 1.25rem;    /* Espacio inferior */
+  transition: color 0.2s ease;/* Transición suave para el cambio de color en hover */
+}
+
+/* Cambia el color del título de la tarjeta al hacer hover en la tarjeta */
+.post-card:hover .post-title {
+  color: var(--accent-primary); /* Pasa a color azul primario */
+}
+
+/* Sección inferior dentro de la tarjeta (Fecha y enlace de lectura) */
+.card-footer-info {
+  display: flex;                  /* Utiliza Flexbox */
+  justify-content: space-between; /* Distribuye a los extremos */
+  align-items: center;            /* Centra alineación vertical */
+  border-top: 1px solid #f1f5f9;  /* Línea divisoria superior muy suave */
+  padding-top: 1rem;              /* Espacio interno sobre la línea */
+}
+
+/* Elemento para mostrar la fecha de la publicación */
+.post-date {
+  font-size: 0.825rem;     /* Texto de tamaño discreto */
+  font-weight: 500;        /* Peso de fuente medio */
+  color: var(--text-muted);/* Color gris secundario */
+}
+
+/* Texto/Enlace indicador "Ler artigo" */
+.read-more {
+  font-size: 0.875rem;          /* Tamaño de fuente estándar pequeño */
+  font-weight: 600;             /* Peso semi-bold */
+  color: var(--accent-primary); /* Color azul de acento */
+  display: inline-flex;         /* Permite alinear el icono SVG horizontalmente con el texto */
+  align-items: center;          /* Centra verticalmente el icono con el texto */
+  gap: 0.35rem;                 /* Separación entre el texto y el icono SVG */
+  transition: gap 0.2s ease;    /* Anima la separación al interactuar */
+}
+
+/* Efecto de desplazamiento de la flecha al pasar el cursor sobre la tarjeta */
+.post-card:hover .read-more {
+  gap: 0.6rem;         /* Separa más el icono del texto dando sensación de movimiento */
+  color: #1d4ed8;      /* Oscurece ligeramente el azul */
+}
+
+/* ==========================================================================
+   VISTA DETALLADA DEL ARTÍCULO (SINGLE ARTICLE)
+   ========================================================================== */
+
+/* Botón de regreso a la lista de publicaciones */
+.back-btn {
+  display: inline-flex;                    /* Flexbox en línea para alinear texto e icono SVG */
+  align-items: center;                     /* Centrado vertical de elementos */
+  gap: 0.6rem;                             /* Separación entre la flecha y el texto */
+  background: var(--card-bg);              /* Fondo blanco */
+  border: 1px solid var(--card-border);    /* Borde gris */
+  border-radius: 30px;                     /* Forma redondeada tipo cápsula */
+  color: var(--text-main);                 /* Color de texto principal */
+  font-size: 0.9rem;                       /* Tamañao de fuente */
+  font-weight: 600;                        /* Texto semi-bold */
+  cursor: pointer;                         /* Puntero interactivo */
+  padding: 0.6rem 1.25rem;                 /* Espaciado interno */
+  margin-bottom: 2rem;                     /* Margen inferior para separarlo del artículo */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);  /* Sombra casi imperceptible */
+  transition: all 0.2s ease;               /* Transición suave para efectos hover */
+}
+
+/* Efecto Hover del botón para volver */
+.back-btn:hover {
+  background: #f1f5f9;       /* Fondo ligeramente gris al pasar el ratón */
+  border-color: #cbd5e1;     /* Borde algo más oscuro */
+  transform: translateX(-3px);/* Desplaza el botón 3px a la izquierda para indicar retroceso */
+}
+
+/* Contenedor principal del artículo completo */
+.single-article {
+  background: var(--card-bg);           /* Fondo blanco puro */
+  border: 1px solid var(--card-border); /* Borde gris tenue */
+  border-radius: 20px;                  /* Bordes más redondeados */
+  padding: 3rem 2.5rem;                 /* Relleno interno amplio para simular lectura en papel */
+  box-shadow: var(--shadow-card);       /* Aplicación de sombra suave */
+}
+
+/* Contenedor de información meta dentro del artículo */
+.article-meta {
+  margin-bottom: 1rem; /* Margen inferior antes del título */
+}
+
+/* Título principal dentro del artículo leído */
+.single-article h1 {
+  font-size: 2.25rem;      /* Tamañao grande para la cabecera de la lectura */
+  font-weight: 800;        /* Extra bold */
+  line-height: 1.3;        /* Interlineado ajustado */
+  margin-bottom: 2rem;     /* Separación inferior antes del contenido */
+  color: var(--text-main); /* Color oscuro principal */
+  letter-spacing: -0.02em; /* Espaciado de letras ajustado */
+}
+
+/* Párrafos dentro del contenido del artículo */
+.single-article .content p {
+  font-size: 1.1rem;         /* Tamañao de fuente óptimo para lecturas prolongadas */
+  color: var(--text-content);/* Gris oscuro sin llegar al negro absoluto */
+  margin-bottom: 1.5rem;     /* Separación entre párrafos */
+  line-height: 1.8;          /* Interlineado amplio para lectura ágil */
+}
+
+/* Estilos para las citas/citas bíblicas (Blockquote) */
+.single-article blockquote {
+  border-left: 4px solid var(--accent-primary); /* Barra lateral gruesa en azul */
+  background: #f8fafc;                          /* Fondo gris claro contrastante */
+  padding: 1.25rem 1.5rem;                      /* Espaciado interno */
+  border-radius: 0 12px 12px 0;                 /* Esquinas redondeadas únicamente en el lado derecho */
+  margin: 2rem 0;                               /* Margen superior e inferior para aislar la cita */
+  font-style: italic;                           /* Fuente en cursiva */
+  color: #475569;                               /* Color de texto gris sobrio */
+  font-size: 1.05rem;                           /* Tamañao de texto ligeramente destacado */
+}
