@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pensamentos & Reflexões</title>
+  
+  <!-- Tipografía Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- ==========================================
+         VISTA 1: FEED DE PUBLICACIONES (MAIN VIEW)
+         ========================================== -->
+    <section id="feed-view" class="view active">
+      
+      <!-- Encabezado Principal (Hero Header) -->
+      <header class="hero-header">
+        <h1 class="header-title">Pensamentos & Reflexões</h1>
+        <p>Escritos pessoais sobre a vida, fé e aprendizados.</p>
+      </header>
+
+      <!-- Feed de Tarjetas -->
+      <div class="posts-feed">
+        
+        <!-- Tarjeta 1 -->
+        <article class="post-card" data-id="1">
+          <h2 class="post-title">O que realmente está sob o nosso controle diante da tempestade</h2>
+          
+          <div class="card-footer-info">
+            <span class="post-date">18 de Agosto, 2026</span>
+            <span class="read-more">
+              Ler artigo 
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="post-card" data-id="2">
+          <h2 class="post-title">A verdadeira paciência: Aprender a esperar quando o tempo parece parar</h2>
+          
+          <div class="card-footer-info">
+            <span class="post-date">6 de Setembro, 2026</span>
+            <span class="read-more">
+              Ler artigo 
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VISTA 2: LECTURA DETALLADA DEL ARTÍCULO
+         ========================================== -->
+    <section id="detail-view" class="view">
+      
+      <!-- Botón para regresar al listado -->
+      <button id="back-btn" class="back-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Voltar às publicações
+      </button>
+
+      <!-- Artículo completo -->
+      <article class="single-article">
+        <div class="article-meta">
+          <time id="article-date" class="post-date"></time>
+        </div>
+        
+        <h1 id="article-title"></h1>
+        
+        <!-- Contenido dinámico inyectado por JS -->
+        <div id="article-content" class="content"></div>
+
+        <!-- Sección de Comentarios Anónimos -->
+        <section class="comments-section">
+          <h3 class="comments-title">Comentários</h3>
+
+          <!-- Formulario de comentario -->
+          <form id="comment-form" class="comment-form">
+            <textarea 
+              id="comment-input" 
+              class="comment-input" 
+              placeholder="Escreva um comentário anônimo..." 
+              rows="3" 
+              required
+            ></textarea>
+            <button type="submit" class="comment-btn">Publicar comentário</button>
+          </form>
+
+          <!-- Lista de comentarios -->
+          <div id="comments-list" class="comments-list"></div>
+        </section>
+
+      </article>
+    </section>
+
+  </main>
+
+  <!-- Lógica JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
