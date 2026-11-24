@@ -3,6 +3,26 @@
 // Objeto JS que funciona como repositorio central de contenidos
 // ==========================================================================
 const postsData = {
+  "4": {
+    title: "Preparação emocional para um relacionamento sério",
+    date: "24 de Novembro, 2026",
+    content: `
+      <p>O objetivo deste blog é refletir sobre a importância de estar emocionalmente preparado para construir e manter um relacionamento amoroso sério e estável.</p>
+
+      <p>Na sociedade atual, é comum vermos casais expressando seu amor publicamente por meio de gestos de carinho, como andar de mãos dadas, beijar-se ou compartilhar momentos juntos. No entanto, um relacionamento vai muito além daquilo que é demonstrado aos outros. A verdadeira força de um vínculo também é construídana convivência diária e, principalmente, na maneira como ambas as pessoas se apoiam durante os momentos difíceis.</p>
+
+      <p>Ao longo de um relacionamento, podem surgir situações inesperadas que colocam à prova a estabilidade emocional do casal. Por exemplo, um dos parceiros pode enfrentar problemas de saúde mental, como ansiedade, depressão ou outras dificuldades psicológicas. Essas circunstâncias podem provocar mudanças importantes na dinâmica do relacionamento e exigem compreensão, paciência, empatia e disposição de ambas as partes.</p>
+
+      <p>Enfrentar uma situação desse tipo nem sempre é fácil. Nem todas as pessoas possuem as ferramentas emocionais ou os conhecimentos necessários para compreender aquilo que seu parceiro está vivenciando. Em algumas situações, a incerteza, o medo ou a falta de preparo podem dificultar o apoio e gerar um certo distanciamento.</p>
+
+      <p>Por isso, é importante compreender que o compromisso amoroso não consiste apenas em compartilhar bons momentos, demonstrar carinho ou expressar o amor publicamente. Também envolve desenvolver a capacidade de enfrentar as dificuldades, manter uma comunicação sincera e reconhecer que haverá fases em que um dos parceiros precisará de mais compreensão e apoio.</p>
+
+      <p>Acompanhar alguém que está enfrentando problemas de saúde mental pode representar um desafio emocional considerável. Isso não significa que precisamos ter todas as respostas ou assumir o papel de profissionais, mas sim compreender a importância de oferecer apoio, respeitar os limites individuais e buscar ajuda especializada sempre que necessário.</p>
+
+      <p>Embora não seja preciso ter vivenciado todas essas experiências dentro de um relacionamento amoroso para refletir sobre o assunto, as experiências próximas com familiares que enfrentaram diferentes problemas de saúde mental podem proporcionar uma perspectiva mais ampla sobre a importância da empatia, da paciência e da estabilidade emocional nos relacionamentos humanos.</p>
+    `
+  },
+
   // Entrada indexada con la clave/ID "3" (El más reciente)
   "3": {
     title: "Para tudo há um tempo determinado",
